@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Convert Speed</title>
+    <script src="js/script.js"></script>
+    <link rel="stylesheet" href="css/style.css">
+
+
+    <style>
+        style {
+            align-items: center;
+        }
+
+        body {
+            background: #2c3e50;
+            /* align-content: center;
+            text-align: center; */
+            /* font-family: 'Roboto', sans-serif; */
+            font-family: 'Oswald';
+            color: white;
+            font-size: 70px;
+            font-weight: bold;
+        }
+
+        /* form {
+            align-content: center;
+            
+        } */
+
+        #bt {
+            font-family: 'Oswald';
+            color: #ffffff;
+            font-size: 30px;
+            height: 60px;
+            width: 200px;
+            font-weight: 100px;
+            background: #0059B7;
+            border: #0059B7;
+            border-radius: 7px;
+        }
+
+        #bt:hover {
+            background: #003E7F;
+            -moz-transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+            -webkit-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+
+
+        }
+
+
+        /* #formula  {
+            font-family: 'Oswald';
+            color: #ffffff;
+            font-size: 30px;
+            height: 60px;
+            width: 200px;
+            font-weight: 100px;
+            background-color:  #30302E;
+            border: #30302E;
+            border-radius: 4px;
+            display: inline-block;
+
+        }
+
+        #formula:hover, #formula:active{
+            background-color:  #6E6E67;
+            -moz-transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+            -webkit-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+        } */
+
+        a:link,
+        a:visited {
+            font-family: 'Oswald';
+            font-size: 30px;
+            height: 35px;
+            width: 150px;
+            font-weight: 100px;
+            background-color: #30302E;
+            border-color: #30302E;
+            color: white;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            text-align: center;
+            border-radius: 10px;
+            border:none;
+            
+            
+        }
+
+
+        a:hover,
+        a:active {
+            background-color: #6E6E67;
+            border-color: #6E6E67;
+            -moz-transition: all .3s ease-in;
+            -o-transition: all .3s ease-in;
+            -webkit-transition: all .3s ease-in;
+            transition: all .3s ease-in;
+            
+        }
+
+        .topic {
+            border: 1px;
+        }
+
+        .un {
+            font-size: 40px;
+        }
+
+
+        table {
+            align-content: center;
+            text-align: center;
+            width: 60%;
+        }
+    </style>
+
+
+    <link href="https://fonts.googleapis.com/css?family=Oswald" rel="stylesheet">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
+</head>
+
+<body>
+    <center>
+        <form action="" onsubmit="return calculator()" onreset="resetForm()">
+            <table>
+                <tr>
+                    <td colspan="3" class="topic">
+                        <label for="textfield">Convert Speed</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <label style="font-size: 30px; color: #c0392b">INPUT HERE</label>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <label for="select" class="un">UNIT 1:</label>
+                        <select name="select" id="from">
+                            <option value="0">Pleae Input</option>
+                            <option value="1">Centimeter/minute(Cm/min)</option>
+                            <option value="2">Meter/hour(Mt/hr)</option>
+                            <option value="3">Kilometer/hour(Km/hr)</option>
+                            <option value="4">Mile/Hour(Mph)</option>
+                            <option value="5">Lightspeed(Ls)</option>
+                        </select>
+                    </td>
+                    <td>
+                        <input type="text" required name="textfield" id="input">
+                    </td>
+                    <td>
+                        <label for="select2" class="un">UNIT 2:</label>
+                        <select name="select2" id="to">
+                            <option value="0">Pleae Input</option>
+                            <option value="1">Centimeter/minute(Cm/min)</option>
+                            <option value="2">Meter/hour(Mt/hr)</option>
+                            <option value="3">Kilometer/hour(Km/hr)</option>
+                            <option value="4">Mile/Hour(Mph)</option>
+                            <option value="5">Lightspeed(Ls)</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3" align=center>
+                        <div class="speedbox">
+                            <div class="speedbox__score" id="speedbox-score"></div>
+                            <div class="speedbox__groove"></div>
+                            <div class="speedbox__odo">
+                                <div class="speedbox__down">
+                                    <p id="result"></p>
+                                    <span id="unit"></span>
+                                </div>
+                            </div>
+                            <div class="speedbox__base"></div>
+                        </div>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <input id="bt" type="submit" value="Calulator">
+                        <input id="bt" type="reset" value="Clear">
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="3">
+                        <button id="formula">
+                            <a href="Formula.html" >Formula</a>
+                        </button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </center>
+
+</body>
+
+</html>
